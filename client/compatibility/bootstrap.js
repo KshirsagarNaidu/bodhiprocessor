@@ -766,7 +766,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   }
 
 
-  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // APPLY TO  DROPDOWN ELEMENTS
   // ===================================
 
   $(document)

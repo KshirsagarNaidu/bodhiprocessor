@@ -59,4 +59,3 @@ Template.courseTitle.events({
         Courses.update(courseID, {$set: {'title': newCourseTitle}});
     },
 });
-

@@ -1,0 +1,45 @@
+<!-- template that shows list of standards avialable -->
+<template name="standards">
+  <section id="cards">
+    <div class="container">
+      <div class="row">
+          {{ #each standards }} {{> standardsCard }} {{ /each }}
+      </div>
+    </div>
+  </section>
+</template>
+
+<template name="standardsCard">
+  <div class="col-md-3 col-sm-6">
+    <div class="panel panel-default panel-card">
+      <div class="panel-heading">
+        <img src="//placehold.it/400x200" alt="Standard {{standard}} image" />
+      </div>
+      <div class="panel-figure">
+        <div class="circle circle-border">
+          <div class="circle-inner">
+            <div class="circle-text">
+              {{title}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body text-center">
+        <h4 class="panel-header"><a href="/std/{{standard}}">{{ longTitle }}</a></h4>
+      </div>
+    </div>
+    {{!--
+    <div class="caption">
+      <h2 class="standard-card-title">
+        <a href="/std/{{standard}}">{{ title }}</a>
+      </h2>
+      <ul>
+        {{#with truncateSubjects 5 subjects}}
+          {{#each truncatedSubjects }}
+            <li><a href="/std/{{../../standard}}/sub/{{subject}}">{{title}}</a></li>
+          {{/each}}
+        {{/with}}
+      </ul>
+    </div> --}}
+  </div>
+</template>

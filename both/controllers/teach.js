@@ -1,9 +1,14 @@
 TeachController = AppController.extend({
-    data: {
+  path: '/teach',
+  template: 'teach',
+  data: {
 
-    },
-    waitOn: function() {
-        // Wait for the tags to be available
-        return this.subscribe('tags');
-    }
+  },
+  waitOn: function() {
+    // Wait for the tags and standards to be available
+    return [
+      this.subscribe('tags'),
+      this.subscribe('allStandards')
+    ];
+  }
 });

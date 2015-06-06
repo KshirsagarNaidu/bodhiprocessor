@@ -1,3 +1,16 @@
+Template.teach.created = function(){
+  this.reactiveSubjects = new ReactiveVar([]);
+};
+
+Template.teach.helpers({
+  'standards' : function() {
+    return Standards.find();
+  },
+  'subjects' : function() {
+    return Template.instance().reactiveSubjects.get();
+  }
+});
+
 Template.teach.events({
     'change #courseCoverImage': function (event, template) {
         // Get the first file selected by the user
@@ -26,8 +39,13 @@ Template.teach.events({
 
             // Cover Image ID comes from reactive var set in #courseCoverImage change event
             coverImageId: imageIdVar.get(),
+            // what is the major subject of the course (eg: mathematics, etc...)
+            subject: template.find("#subjectTitle").value,
+            // what standard is this course targeted towards?
+            standard: template.find("standard").value,
 
-            author: template.find('#authorName').value, // string
+            // author is not required
+            // author: template.find('#authorName').value, // string
             keywords: template.find('#courseKeywords').value.split(','), // split keywords to array
             published: template.find('#coursePublished').value, // string
             about: $('#aboutText').code() // Get the HTML code from the Summernote editor
@@ -38,6 +56,12 @@ Template.teach.events({
 
         // Redirect to the learn page, for now
         Router.go('learn');
+    },
+    'change #standard' : function (event, template) {
+      // when the standard/ is selected, subject selection options should be updated
+      var standard = template.find('#standard').value;
+      var standardObject = Standards.findOne({'standard' : standard });
+      template.reactiveSubjects.set(standardObject.subjects);
     }
 });
 
@@ -82,4 +106,8 @@ Template.teach.rendered = function() {
             }
         }
     });
+
+    var standard = this.find('#standard').value;
+    var standardObject = Standards.findOne({'standard' : standard });
+    this.reactiveSubjects.set(standardObject.subjects);
 };

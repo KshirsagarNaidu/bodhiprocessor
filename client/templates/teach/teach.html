@@ -23,13 +23,20 @@
                 <input type="file" class="btn btn-default" id="courseCoverImage">
             </div>
             <div class="form-group">
-                <label for="authorName">
-                    {{ mf 'teach-addCourseForm-courseTitle-author-label' 'Author'}}
-                </label>
-                <input type="text"
-                       class="form-control"
-                       id="authorName"
-                       placeholder="{{ mf 'teach-addCourseForm-courseTitle-author-placeholder' 'Author Name' }}">
+              <label for="standard">{{mf 'teach-standard' 'Standard'}}</label>
+              <select class="form-control" id="standard">
+                {{#each standards}}
+                  <option value="{{standard}}">{{title}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select class="form-control" id="subject">
+                {{#each subjects}}
+                <option value="{{subject}}">{{title}}</option>
+                {{/each}}
+              </select>
             </div>
             <div class="form-group">
                 <label for="courseKeywords">
@@ -39,7 +46,6 @@
                        id="courseKeywords"
                        placeholder="{{ mf 'teach-addCourseForm-courseTitle-keywords-placeholder' 'Choose some tags (e.g. JavaScript, Math)' }}">
             </div>
-
             <div class="form-group">
                 <label for="coursePublished">
                     {{ mf 'teach-addCourseForm-courseTitle-published-label' 'Change to "Published" when course should be viewable to others.' }}

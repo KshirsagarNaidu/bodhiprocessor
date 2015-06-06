@@ -103,8 +103,8 @@ menu, a prominent item in the list meets this criterion.
 for making modifications to it.  "Object code" means any non-source
 form of a work.
 
-  A "Standard Interface" means an interface that either is an official
-standard defined by a recognized standards body, or, in the case of
+  A " Interface" means an interface that either is an official
+ defined by a recognized s body, or, in the case of
 interfaces specified for a particular programming language, one that
 is widely used among developers working in that language.
 
@@ -112,7 +112,7 @@ is widely used among developers working in that language.
 than the work as a whole, that (a) is included in the normal form of
 packaging a Major Component, but which is not part of that Major
 Component, and (b) serves only to enable use of the work with that
-Major Component, or to implement a Standard Interface for which an
+Major Component, or to implement a  Interface for which an
 implementation is available to the public in source code form.  A
 "Major Component", in this context, means a major essential component
 (kernel, window system, and so on) of the specific operating system
@@ -544,7 +544,7 @@ Program, your modified version must prominently offer all users
 interacting with it remotely through a computer network (if your version
 supports such interaction) an opportunity to receive the Corresponding
 Source of your version by providing access to the Corresponding Source
-from a network server at no charge, through some standard or customary
+from a network server at no charge, through some  or customary
 means of facilitating copying of software.  This Corresponding Source
 shall include the Corresponding Source for any work covered by version 3
 of the GNU General Public License that is incorporated pursuant to the
@@ -659,4 +659,3 @@ specific requirements.
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <http://www.gnu.org/licenses/>.
-
